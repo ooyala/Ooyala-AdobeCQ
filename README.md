@@ -3,7 +3,7 @@ Ooyala AdobeCQ Connector
 
 <dl>
 	<dt>Compatibility</dt>
-	<dd>Adobe CQ 5.5</dd>
+	<dd>Adobe CQ 5.6</dd>
 
 	<dt>Usage</dt>
 	<dd>A pre built package is available through github by clicking the download link above. Install the zip file into CQs package manager. Configuration instructions are available in documentation/Ooyala-AdobeCQ-Documentation.pdf</dd>
