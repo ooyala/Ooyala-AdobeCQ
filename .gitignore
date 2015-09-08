@@ -1,0 +1,54 @@
+### Mac OS X ###
+.DS_Store
+
+
+### Package Files ###
+*.ear
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.war
+*.zip
+
+#### Eclipse ###
+.classpath
+.project
+.settings/
+
+
+### VLT ###
+*.vlt
+*.vlt-sync.log
+*.vlt-sync-config.properties
+
+### SVN ###
+.svn/
+
+### Maven ###
+log/
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+
+### Intellij ###
+# Created by https://www.gitignore.io
+*.iml
+.idea/
+
+## File-based project format:
+*.ipr
+*.iws
+
+## Plugin-specific files:
+*.dir
+/out/
+dev/
