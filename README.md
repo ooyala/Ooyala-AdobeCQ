@@ -15,7 +15,7 @@ Building from Source
 
 <dl>
 	<dt>Requirements</dt>
-	<dd>Maven, Adobe CQ5.5</dd>
+	<dd>Maven, Adobe CQ5.6</dd>
 
 	<dt>Build</dt>
 	<dd>Clone the repository. Execute `mvn install` in the parent directory (Ooyala-AdobeCQ). A full content-package zip can be found under deploy/target.</dd>
@@ -24,5 +24,13 @@ Building from Source
 	<dd>You can automatically deploy to the local CQ instance, using the built in deploy profile. (mvn clean install -Pdeploy,local-author) All CQ connection parameters are exposed clearly within the parent POM for customization.</dd>
 </dl>
 
+
+Installing a pre-built package
+==============================
+
+<dl>
+    <dt>ooyala-deploy-xxx.zip</dt>  
+    <dd>A pre-built content package can be found on the releases page.</dd>
+</dl>
 
 ### Built by [Siteworx](http://www.siteworx.com) in NYC.
