@@ -29,7 +29,7 @@ If you are running a proxy, you must restart your instance by specifying the con
 * *nonProxyHosts*
 * *proxyPort*
 
-`java -Dhttp.proxyHost=proxy.example.com -Dhttp.nonProxyHosts=*.foo.com|localhost -Dhttp.proxyPort=3128`
+`java -Dhttp.proxyHost=proxy.example.com -Dhttp.nonProxyHosts="*.foo.com|localhost" -Dhttp.proxyPort=3128 -jar  cq56-author-p4502.jar`
 
 
 ###Ooyala Configuration and Usage Documentation
