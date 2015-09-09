@@ -16,7 +16,7 @@ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
 
 <%@page import="com.day.cq.wcm.api.WCMMode"%>
 <%@page import="javax.jcr.Node"%>
-<%@page session="false" contentType="application/json; charset=utf-8" pageEncoding="utf-8"%>
+<%@page session="false" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@taglib prefix="sling" uri="http://sling.apache.org/taglibs/sling/1.0"%>
 <%@include file="/libs/foundation/global.jsp" %>
 <sling:defineObjects />
