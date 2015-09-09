@@ -1,7 +1,8 @@
 package com.siteworx.cq5.ooyala.client;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
+import java.net.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Map;
@@ -10,6 +11,10 @@ import java.util.SortedMap;
 
 import javax.ws.rs.core.MediaType;
 
+import com.sun.jersey.api.client.config.ClientConfig;
+import com.sun.jersey.api.client.config.DefaultClientConfig;
+import com.sun.jersey.client.urlconnection.HttpURLConnectionFactory;
+import com.sun.jersey.client.urlconnection.URLConnectionClientHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -60,7 +65,27 @@ public class OoyalaClient {
 	public OoyalaClient(){
 		try {
 			digest = MessageDigest.getInstance("SHA-256");
-			client = Client.create();
+			ClientConfig config = new DefaultClientConfig();
+
+			client = new Client(new URLConnectionClientHandler(
+					new HttpURLConnectionFactory() {
+						Proxy p = null;
+						@Override
+						public HttpURLConnection getHttpURLConnection(URL url)
+								throws IOException {
+							if (p == null) {
+								if (System.getProperties().containsKey("http.proxyHost")) {
+									p = new Proxy(Proxy.Type.HTTP,
+											new InetSocketAddress(
+													System.getProperty("http.proxyHost"),
+													Integer.getInteger("http.proxyPort", 80)));
+								} else {
+									p = Proxy.NO_PROXY;
+								}
+							}
+							return (HttpURLConnection) url.openConnection(p);
+						}
+					}), config);
 			client.setConnectTimeout(15000);//15 second timeout
 			client.setReadTimeout(60000);//60 second timeout
 		} catch (NoSuchAlgorithmException e) {
