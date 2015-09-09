@@ -24,9 +24,13 @@ _*Adobe CQ 5.6*_
 
 
 ###Using with a Proxy
-If you are running a proxy, you must specify the configured *host* and *port* when starting your instance
-* `java -Dhttp.proxyHost=proxy.example.com -Dhttp.proxyPort=3128`
-* __This requires a system restart.__
+If you are running a proxy, you must restart your instance by specifying the configuration parameters:
+* *proxyHost*
+* *nonProxyHosts*
+* *proxyPort*
+
+`java -Dhttp.proxyHost=proxy.example.com -Dhttp.nonProxyHosts=*.foo.com|localhost -Dhttp.proxyPort=3128`
+
 
 ###Ooyala Configuration and Usage Documentation
 Additional documentation can be found at *documentation/Ooyala-AdobeCQ-Documentation.pdf* which covers:
@@ -36,4 +40,4 @@ Additional documentation can be found at *documentation/Ooyala-AdobeCQ-Documenta
 
 
 ##### Built by [Siteworx](http://www.siteworx.com) in NYC.
-##### Updated by [Coresecure](https://www.coresecure.com) in Cambridge.
+##### Updated by [Coresecure](https://www.coresecure.com) in Cambridge, Massachusetts
