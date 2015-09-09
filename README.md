@@ -1,36 +1,43 @@
 Ooyala AdobeCQ Connector
 =========================
 
-<dl>
-	<dt>Compatibility</dt>
-	<dd>Adobe CQ 5.6</dd>
+###Compatibility
+_*Adobe CQ 5.6*_
 
-	<dt>Usage</dt>
-	<dd>A pre built package is available through github by clicking the download link above. Install the zip file into CQs package manager. Configuration instructions are available in documentation/Ooyala-AdobeCQ-Documentation.pdf</dd>
-</dl>
+###Installation
 
+####Pre-Built Package
+- Download the latest compatible release from GitHub by clicking the [**releases**](https://github.com/coresecure/Ooyala-AdobeCQ) link above.
+    - ooyala-deploy-xxx.zip
+  
+- Install the zip file into CQs package manager.
+    - http://localhost:4502/crx/packmgr/index.jsp
+	
+####Building with Maven
+- Clone the repository
+- `cd Ooyala-AdobeCQ`
+- `mvn install`
+- A complete package can be found under *deploy/target/content-packages/*
 
-Building from Source
-====================
-
-<dl>
-	<dt>Requirements</dt>
-	<dd>Maven, Adobe CQ5.6</dd>
-
-	<dt>Build</dt>
-	<dd>Clone the repository. Execute `mvn install` in the parent directory (Ooyala-AdobeCQ). A full content-package zip can be found under deploy/target.</dd>
-
-	<dt>Deploy</dt>
-	<dd>You can automatically deploy to the local CQ instance, using the built in deploy profile. (mvn clean install -Pdeploy,local-author) All CQ connection parameters are exposed clearly within the parent POM for customization.</dd>
-</dl>
+####Installing with Maven
+- `mvn clean install -Pdeploy,local-author  -Dcq.host=localhost -Dcq.port=4502`
 
 
-Installing a pre-built package
-==============================
+###Using with a Proxy
+If you are running a proxy, you must restart your instance by specifying the configuration parameters:
+* *proxyHost*
+* *nonProxyHosts*
+* *proxyPort*
 
-<dl>
-    <dt>ooyala-deploy-xxx.zip</dt>  
-    <dd>A pre-built content package can be found on the releases page.</dd>
-</dl>
+`java -Dhttp.proxyHost=proxy.example.com -Dhttp.nonProxyHosts=*.foo.com|localhost -Dhttp.proxyPort=3128`
 
-### Built by [Siteworx](http://www.siteworx.com) in NYC.
+
+###Ooyala Configuration and Usage Documentation
+Additional documentation can be found at *documentation/Ooyala-AdobeCQ-Documentation.pdf* which covers:
+* Ooyala API Configuration.
+* Finding videos in the Content Finder.
+* Uploading videos from CQ5 to Ooyala.
+
+
+##### Built by [Siteworx](http://www.siteworx.com) in NYC.
+##### Updated by [Coresecure](https://www.coresecure.com) in Cambridge, Massachusetts
