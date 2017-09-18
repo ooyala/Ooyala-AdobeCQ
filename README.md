@@ -1,3 +1,10 @@
+Warning
+=========================
+
+<dl>
+    <dt>Current plugin version is deprecated. Please refer to https://github.com/ooyala/OoyalaAEM to get AEM 6.2 and AEM 6.3 compatible plugin version.</dt>
+</dl>
+
 Ooyala AdobeCQ Connector
 =========================
 
